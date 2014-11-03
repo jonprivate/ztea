@@ -45,11 +45,11 @@
                 echo "Sorry, but your username or password is wrong.";
                 echo "<br/>";
                 $link = <<<EOD
-                <a href="../register.php">You can register here :)</a>
+                <a href="register.php">You can register here :)</a>
 EOD;
                 echo $link;
             }
-            $closeDB($conn);
+            closeDB($conn);
             echo "<br/>";
             /* Redirect browser */
             header("Location: http://jiong-liu.rochestercs.org/");
