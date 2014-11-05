@@ -1,6 +1,6 @@
 <?php
-    require 'global.php';
-    require 'cgi-bin/check_status.php';
+    require_once 'global.php';
+    require_once 'cgi-bin/check_status.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
                 $form_login = <<<EOD
                     <div class="body-title-font">
                     <h3 class="body-title-font">Log in</h3>
-                    <form method="post" action="cgi-bin/login.php">
+                    <form method="post" action="cgi-bin/log.php">
                         <input class="type-in" name="username" type="text" size=50 placeholder="Username"/><br/>
                         <input class="type-in" name="password" type="password" size=50 placeholder="Password"/><br/>
                         <input id="submit-form" type="submit" value="Sign in"/>

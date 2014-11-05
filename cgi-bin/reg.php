@@ -1,6 +1,6 @@
 <?php
-    require 'global.php';
-    require 'cgi-bin/check_status.php';
+    require_once __DIR__ . '/../global.php';
+    require_once 'cgi-bin/check_status.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +23,8 @@
         <section>
             <?php
                 if(!$uid_isset || !$uid_isvalid) {
-                    require 'cgi-bin/db_query.php';
-                    $db_name = 'users';
+                    require_once 'cgi-bin/db_query.php';
+                    $db_name = 'jiongliu_users';
                     $table_name = 'users';
                     // access database and posted data
                     $conn = connectToDB($db_name);
@@ -38,7 +38,7 @@
                     {
                         echo "Sorry, but you already exist<br/>";
                         $link = <<<EOD
-                        <a href="login.php">You can login here</a>
+                        <a href="/login.php">You can login here</a>
 EOD;
                         echo $link;
                     } else

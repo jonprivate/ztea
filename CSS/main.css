@@ -12,14 +12,27 @@ body {
 #index-header {
     background-color: #ffb87c;
 }
+#index-header a {
+    color: #a45e00;
+    font-family: 'Coming Soon', cursive;
+    font-size: 1.2em;
+}
 
 /*Top-Right corner*/
 #reg-log {
     background-color: #ffa052;
     text-align: right;
+}
+#reg-log a, #greeting {
+    color: #a45e00;
+    font-family: 'Coming Soon', cursive;
     font-size: 0.8em;
 }
 #reg-log a {
+    display: inline-block;
+    margin: 0.2em 1em 0.2em 1em;
+}
+#greeting {
     display: inline-block;
     margin: 0.2em 1em 0.2em 1em;
 }
@@ -27,17 +40,13 @@ body {
 /*navigations*/
 #index-header ul {
     text-align: center;
-    margin-top: -3em;
+    margin-top: -5em;
 }
 #index-header li {
     display: inline-block;
     margin: 0 1em;
 }
-#index-header a {
-    color: #a45e00;
-    font-family: 'Coming Soon', cursive;
-    font-size: 1.2em;
-}
+
 
 /*logo*/
 #toplogo {

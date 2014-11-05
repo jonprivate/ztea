@@ -1,6 +1,6 @@
 <?php
-    require 'global.php';
-    require 'cgi-bin/check_status.php';
+    require_once 'global.php';
+    require_once 'cgi-bin/check_status.php';
 ?>
 
 <!DOCTYPE html>

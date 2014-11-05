@@ -5,7 +5,7 @@
         <div id="reg-log">
 
 EOD;
-        $greet = $greet_up . "Hi, " . $uid . "! <br/><a href='cgi-bin/changeset.php'>settings</a> <a href='cgi-bin/logout.php'>logout</a><br/>";
+        $greet = $greet_up . "<p id='greeting'>Hi, " . $uid . "!</p> <a href='/changeset.php'>settings</a> <a href='/logout.php'>logout</a>";
         $greet_down = <<<EOD
 
         </div>
@@ -16,8 +16,8 @@ EOD;
     } else {
         $reg_log = <<<EOD
         <div id="reg-log">
-            <a href="register.php">register</a>
-            <a href="login.php">login</a>
+            <a href="/register.php">register</a>
+            <a href="/login.php">login</a>
         </div>
 
 EOD;

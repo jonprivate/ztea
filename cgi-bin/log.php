@@ -1,5 +1,5 @@
 <?php
-    require 'global.php';
+    require __DIR__ . '/../global.php';
     require 'cgi-bin/check_status.php';
 ?>
 
@@ -20,11 +20,10 @@
             require 'parts/header.php';
         ?>
         <section>
-
         <?php
         if(!$uid_isset || !$uid_isvalid) {
-            require 'cgi-bin/db_query.php';
-            $db_name = 'users';
+            require_once 'cgi-bin/db_query.php';
+            $db_name = 'jiongliu_users';
             $table_name = 'users';
             // access database and posted data
             $conn = connectToDB($db_name);
@@ -45,7 +44,7 @@
                 echo "Sorry, but your username or password is wrong.";
                 echo "<br/>";
                 $link = <<<EOD
-                <a href="register.php">You can register here :)</a>
+                <a href="/register.php">You can register here :)</a>
 EOD;
                 echo $link;
             }

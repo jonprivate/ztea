@@ -1,8 +1,8 @@
 <?PHP
     function connectToDB($db_name) {
         $servername = "localhost";
-        $username = "jon";
-        $password = "jon";
+        $username = "jiongliu";
+        $password = "Jon528240@b";
         
         // Create connection
         global $conn;
@@ -12,8 +12,6 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } 
-        echo "Connected successfully";
-        echo "<br/>";
         return $conn;
     }
     
@@ -31,7 +29,7 @@
         }
     }
     
-    function checkTale($conn, $table_name, $item_name, $item_value) {
+    function checkTable($conn, $table_name, $item_name, $item_value) {
         $sql = "SELECT * FROM $table_name WHERE $item_name = '$item_value'";
         $result = $conn->query($sql) or die('fail<br/>');
         if($result->num_rows > 0) {
@@ -41,17 +39,33 @@
         }
     }
     
+    function checkTable2($conn, $table_name, $item_name1, $item_value1, $item_name2, $item_value2) {
+        $sql = "SELECT * FROM $table_name WHERE $item_name1 = '$item_value1' AND $item_name2 = '$item_value2'";
+        $result = $conn->query($sql) or die('fail<br/>');
+        if($result->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     function insertIntoTable($conn, $table_name, $username, $email, $password) {
         $sql = "INSERT INTO " . $table_name . " (username, email, password) VALUES ('" . $username . "', '" . $email . "', '" . $password . "')";
         
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully<br/>";
-        } else {
+        if ($conn->query($sql) === FALSE) {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
     
+
+    function updateTable($conn, $table_name, $up_name, $up_value, $id_key, $id_value) {
+	    $sql = "UPDATE $table_name SET $up_name = '$up_value' WHERE $id_key = '$id_value'";
+	    if ($conn->query($sql) === FALSE) {
+		    echo "Error updating record: " . $conn->error;
+	    }
+    } 
+    
     function closeDB($conn) {
-        $conn->close();
+        mysql_close($conn);
     }
 ?>
