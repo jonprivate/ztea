@@ -21,10 +21,9 @@
         ?>
         
         <section>
-            <p>Welcome!</p>
             <?php
-                require 'cgi-bin/db_query.php';
-            ?>
+	        require 'showProducts.php';
+	    ?>
         </section>
         
         <?php
