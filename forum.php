@@ -1,5 +1,6 @@
 <?php
     include 'header.php';
+    include 'forum_nav.php';
     
     require_once 'db_query.php';
     connectToDB();
