@@ -18,8 +18,8 @@ body {
 }
 #index-header a {
     color: #a45e00;
-    font-family: 'Coming Soon', cursive;
-    font-size: 1.2em;
+    font-family: 'Rock Salt', cursive; /*'Coming Soon', cursive;*/
+    font-size: 1.5em;
 }
 
 /*Top-Right corner*/
@@ -29,8 +29,8 @@ body {
 }
 #reg-log a, #greeting {
     color: #a45e00;
-    font-family: 'Coming Soon', cursive;
-    font-size: 0.8em;
+    font-family: 'Rock Salt', cursive;
+    font-size: 1em;
 }
 #reg-log a {
     display: inline-block;
@@ -55,7 +55,7 @@ body {
 /*logo*/
 #toplogo {
     position: relative;
-    top: 3em;
+    top: 2em;
 }
 
 /************************Section************************/
