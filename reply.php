@@ -24,11 +24,10 @@
                   post_date,
                   post_topic,
                   post_by)
-            VALUES ('" . $_POST['reply-content'] . "',
+            VALUES ('" . mysql_real_escape_string($_POST['reply-content']) . "',
                     NOW(),
                     " . mysql_real_escape_string($_GET['id']) . ",
                     " . $user_id . ")";
-            
             $result = mysql_query($sql);
             
             if(!$result)
