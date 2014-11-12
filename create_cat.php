@@ -3,17 +3,15 @@
     include 'forum_nav.php';
     require_once 'db_query.php';
     connectToDB();
-    /*
-    echo '<tr>';
-    echo '<td class="leftpart">';
-    echo '<h3><a href="category.php?id=">Category name</a></h3> Category description goes here';
-    echo '</td>';
-    echo '<td class="rightpart">';
-    echo '<a href="topic.php?id=' . '">Topic subject</a> at 10-10';
-    echo '</td>';
-    echo '</tr>';*/
+
     echo '<h2>Create a category</h2>';
-    
+    if(!$uid_isset || !$uid_isvalid)
+    {
+        //the user is not signed in
+        echo 'Sorry, you have to be <a href="/ztea/signin.php">signed in</a> to create a topic.';
+    }
+    else
+    {
         
         if($_SERVER['REQUEST_METHOD'] != 'POST')
         {
@@ -43,7 +41,8 @@
                echo 'New category successfully added. <a href="category.php?id=' . $catid . '">Your new category</a>.';
                }
         }
-                   
+    }
+    
     include 'footer.php';
     closeDB();
 ?>
