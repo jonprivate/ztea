@@ -3,7 +3,7 @@
     include 'forum_nav.php';
     require_once 'db_query.php';
     connectToDB();
-    
+    /*
     echo '<tr>';
     echo '<td class="leftpart">';
     echo '<h3><a href="category.php?id=">Category name</a></h3> Category description goes here';
@@ -11,7 +11,8 @@
     echo '<td class="rightpart">';
     echo '<a href="topic.php?id=' . '">Topic subject</a> at 10-10';
     echo '</td>';
-    echo '</tr>';
+    echo '</tr>';*/
+    echo '<h2>Create a category</h2>';
     
         
         if($_SERVER['REQUEST_METHOD'] != 'POST')
@@ -38,7 +39,8 @@
                }
                else
                {
-               echo 'New category successfully added.';
+                   $catid = mysql_insert_id();
+               echo 'New category successfully added. <a href="category.php?id=' . $catid . '">Your new category</a>.';
                }
         }
                    
