@@ -8,7 +8,7 @@
     if(!$uid_isset || !$uid_isvalid)
     {
         //the user is not signed in
-        echo 'Sorry, you have to be <a href="/ztea/signin.php">signed in</a> to create a topic.';
+        echo 'Sorry, you have to be <a href="/ztea/login.php">signed in</a> to create a topic.';
     }
     else
     {
