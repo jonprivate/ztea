@@ -123,6 +123,50 @@ div.desc {
 	margin: 5px;
 }
 
+
+div.ingredient {
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+div.ingredient img {
+    width: 80px;
+    margin: 5px;
+}
+#waterimg img{
+    width: 60px;
+    margin: 5px;
+}
+/*
+#waterimg img{
+    width: 80px;
+    margin: 5px;
+}
+#milkimg img{
+    width: 100px;
+    margin: 5px;
+}
+#bubbleimg img{
+    width: 100px;
+    margin: 5px;
+}
+#sugarimg img{
+    width: 100px;
+    margin: 5px;
+}*/
+#showmix {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+#adjust-amount {
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    bottom: 100px;
+}
 /************************Footer************************/
 footer {
 	clear: both;

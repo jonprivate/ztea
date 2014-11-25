@@ -45,7 +45,7 @@
             <ul>
                 <li><a href="/ztea/index.php">Home</a></li>
                 <li><a href="/ztea/personal.php">Personal</a></li>
-                <li><a id="toplogo" href="/index.php">
+                <li><a id="toplogo" href="/ztea/index.php">
                     <img src="/ztea/images/coffee.gif" alt="coffee logo" height="150">
                         </a></li>
                 <li><a href="/ztea/forum.php">Forum</a></li>
