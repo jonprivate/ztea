@@ -6,7 +6,7 @@
     if(!$uid_isset || !$uid_isvalid)
     {
         //the user is not signed in
-        echo '<a href="/ztea/login.php">Sign in</a> to view more.';
+        echo '<a href="./login.php">Sign in</a> to view more.';
     }
     else
     {

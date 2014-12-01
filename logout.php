@@ -8,7 +8,7 @@
 
     /* Redirect browser */
     // for mamp
-    header("Location: http://localhost:8888/ztea/");
+    header("Location: ./");
     /*// for bluehost
     header("Location: http://jiong-liu.rochestercs.org/ztea");
      */

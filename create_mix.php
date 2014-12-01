@@ -47,11 +47,6 @@
             
             $sql = "INSERT INTO mixes(mix_name, mix_description, mix_by, mix_date) VALUES ('" . mysql_real_escape_string($mix_name) . "', '" . mysql_real_escape_string($mix_description) . "'," . $mix_by . ", NOW())";
             
-            echo mysql_real_escape_string($mix_name);
-            echo '<br/>';
-            echo mysql_real_escape_string($mix_description);
-            echo '<br/>';
-            echo $sql;
             $result = mysql_query($sql);
             
             if(!$result)
