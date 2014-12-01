@@ -1,18 +1,18 @@
 <?PHP
     function connectToDB() {
+        /*
         // for bluehost
         $servername = "localhost";
         $username = "jiongliu";
         $password = "Jon528240@b";
         $db_name = "jiongliu_users";
+         */
 	
-    /*
         // for mamp
         $servername = "localhost";
         $username = "root";
         $password = "root";
         $db_name = "users";
-    */	
 
         
         // Create connection
