@@ -23,9 +23,16 @@
             }
             echo '</div>';
             echo '<form name="create_mix" action="" method="POST">';
-            //echo '<input type="hidden" name="ingredients" value="">';
+            // ingredients
+            echo '<input id="water-input" type="hidden" name="water" value="">';
+            echo '<input id="milk-input" type="hidden" name="milk" value="">';
+            echo '<input id="sugar-input" type="hidden" name="sugar" value="">';
+            echo '<input id="bubble-input" type="hidden" name="bubble" value="">';
+            // user id
             echo '<input type="hidden" name="mix_by" value="' . $user_id . '">';
+            // mix name
             echo 'Name your mix: <input type="text" name="mix_name" placeholder="untitled"><br/>';
+            // mix description
             echo 'Describe your mix: <br/><textarea name="mix_description" placeholder="undescribed"/></textarea><br/>';
             echo '<input type="submit" value="Mix is done!" />';
             echo '</form>';
@@ -44,8 +51,27 @@
                 $mix_description = "undescribed";
             else
                 $mix_description = $_POST['mix_description'];
+            if(!isset($_POST['water']) || empty($_POST['water']))
+                $water = "0";
+            else
+                $water = $_POST['water'];
+            if(!isset($_POST['milk']) || empty($_POST['milk']))
+                $milk = "0";
+            else
+                $milk = $_POST['milk'];
+            if(!isset($_POST['sugar']) || empty($_POST['sugar']))
+                $sugar = "0";
+            else
+                $sugar = $_POST['sugar'];
+            if(!isset($_POST['bubble']) || empty($_POST['bubble']))
+                $bubble = "0";
+            else
+                $bubble = $_POST['bubble'];
             
-            $sql = "INSERT INTO mixes(mix_name, mix_description, mix_by, mix_date) VALUES ('" . mysql_real_escape_string($mix_name) . "', '" . mysql_real_escape_string($mix_description) . "'," . $mix_by . ", NOW())";
+            $sql = "INSERT INTO mixes(mix_name, mix_description, mix_by, mix_date, water, sugar, milk, bubble) VALUES ('" . mysql_real_escape_string($mix_name) . "', '" . mysql_real_escape_string($mix_description) . "'," . $mix_by . ", NOW()," . $water . "," . $milk . "," . $sugar . "," . $bubble . ")";
+            
+            echo $sql;
+            echo '<br/>';
             
             $result = mysql_query($sql);
             
@@ -70,6 +96,15 @@
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script>
 var ingred = <?php echo json_encode($ingredients); ?>;
+function changeIngredAmount(ingred) {
+    //ingred = JSON.parse(json.ingredients);
+    var item;
+    for(item in ingred)
+        $("#" + item + "-input").attr('value', ingred[item]);
+    //var item = "water";
+    //$("#" + item + "-input").attr('value', ingred[item]);
+}
+
 
 $(document).ready(
                   function() {
@@ -92,6 +127,7 @@ $(document).ready(
                                                     ingred = JSON.parse(json.ingredients);
                                                     //console.dir(ingred);
                                                     cur_div.parent().find('span').html(ingred[iterm]);
+                                         changeIngredAmount(ingred)
                                          },
                                   });
                                   }
@@ -115,6 +151,7 @@ $(document).ready(
                                          ingred = JSON.parse(json.ingredients);
                                          //console.dir(ingred);
                                          cur_div.parent().find('span').html(ingred[iterm]);
+                                         changeIngredAmount(ingred);
                                          },
                                          });
                                   }
@@ -139,6 +176,7 @@ $(document).ready(
                                                 ingred = JSON.parse(json.ingredients);
                                                 //console.dir(ingred);
                                                 $("#" + iterm).find('span').html(ingred[iterm]);
+                                                changeIngredAmount(ingred);
                                                 },
                                                 });
                                          }

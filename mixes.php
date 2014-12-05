@@ -28,6 +28,10 @@
             mixes.mix_name,
             mixes.mix_description,
             mixes.mix_date,
+            mixes.water,
+            mixes.milk,
+            mixes.sugar,
+            mixes.bubble,
             users.user_id,
             users.user_name
             FROM
@@ -72,8 +76,11 @@
                         echo date('d-m-Y', strtotime($row['mix_date']));
                         echo '</td>';
                         echo '</tr>';
+                        $ingredients = array("water"=>$row['water'],"milk"=>$row['milk'],"suggar"=>$row['suggar'],"bubble"=>$row['bubble']);
                     }
                     echo '</table>';
+                    echo '<div id="canvas_container"></div>';
+                    echo '<div id="test"></div>';
                 }
             }
         }
@@ -82,3 +89,64 @@
     include 'footer.php';
     closeDB();
 ?>
+
+<script src="raphael.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+function drawMyBottle(ingred, paper, brect, cellheight, cellwidth) {
+    var rect = paper.rect(brect[0], brect[1], brect[2], brect[3]).attr({fill: '#9cf', stroke: 'none', 'stroke-width': 5});
+
+    var color;
+    var left_pos = brect[0], top_pos = brect[1] + brect[3];
+    var solid_left_pos = brect[0], solid_top_pos = brect[1] + brect[3];
+    for(item in ingred) {
+        switch (item) {
+            case 'water':
+                color = "blue";
+                break;
+            case 'milk':
+                color = "white";
+                break;
+            case 'sugar':
+                color = "red";
+                break;
+            case 'bubble':
+                color = "black";
+                break;
+        }
+        if(ingred[item] == null)
+            ingred[item] = '0';
+        if(item == 'bubble') {
+            var radius = cellheight / 2;
+            var solid_center_left = solid_left_pos + radius;
+            var solid_center_top = solid_top_pos - radius;
+            var num_per_line = brect[2] / (2 * radius);
+            var num_lines = ingred[item];
+            for(var y = 0; y < num_lines; y++) {
+                solid_center_left = solid_left_pos + radius;
+                for(var x = 0; x < num_per_line; x++) {
+                    paper.circle(solid_center_left, solid_center_top, radius);
+                    solid_center_left += 2 * radius;
+                }
+                solid_center_top -= 2 * radius;
+            }
+        } else {
+            width = cellwidth; height = cellheight * ingred[item];
+            top_pos = top_pos - height;
+            paper.rect(left_pos, top_pos, width, height).attr({fill: color, stroke: 'none'});
+        }
+    }
+}
+
+window.onload = function() {
+    var paper = new Raphael(document.getElementById('canvas_container'), 500, 500);
+    //var rect = paper.rect(10, 10, 80, 150);
+    //rect.attr({fill: '#9cf', stroke: 'none', 'stroke-width': 5});
+    var ingred = <?php echo json_encode($ingredients); ?>;
+
+    var bottle_left = 10, bottle_top = 10, bottle_width = 150, bottle_height = 350;
+    var brect = [bottle_left, bottle_top, bottle_width, bottle_height];
+    var cellheight = 50, cellwidth = bottle_width;
+    drawMyBottle(ingred, paper, brect, cellheight, cellwidth);
+}
+</script>
