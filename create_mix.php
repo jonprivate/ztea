@@ -70,9 +70,6 @@
             
             $sql = "INSERT INTO mixes(mix_name, mix_description, mix_by, mix_date, water, sugar, milk, bubble) VALUES ('" . mysql_real_escape_string($mix_name) . "', '" . mysql_real_escape_string($mix_description) . "'," . $mix_by . ", NOW()," . $water . "," . $milk . "," . $sugar . "," . $bubble . ")";
             
-            echo $sql;
-            echo '<br/>';
-            
             $result = mysql_query($sql);
             
             if(!$result)
