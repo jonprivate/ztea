@@ -10,11 +10,12 @@
     }
     else
     {
-        echo '<p>Coupons!</p>';
-        echo '<a href="/ztea/create_mix.php">Create your own mix!</a>';
-        echo '<p>List of all your mixes</p>';
-        $sql = "SELECT mix_id, mix_name, mix_description FROM mixes";
+        echo '<p class="body-title-font">Coupons!</p>';
+        echo '<a class="body-title-font" href="/ztea/create_mix.php">Create your own mix!</a>';
+        echo '<p class="body-title-font">List of all your mixes</p>';
+        $sql = "SELECT mix_id, mix_name, mix_description FROM mixes WHERE mix_by = '" . mysql_real_escape_string($user_id) . "'";
         $result = mysql_query($sql);
+        
         if(!$result)
         {
             echo 'The mixes could not be displayed, please try again later.';
@@ -28,7 +29,7 @@
             else
             {
                 //prepare the table
-                echo '<table border="1">
+                echo '<table class="zebra" border="1">
                 <tr>
                 <th>Mixes</th>
                 <th>Description</th>
