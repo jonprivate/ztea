@@ -58,10 +58,11 @@
                 }
                 else
                 {
+                    echo '<h3>Mix: ' . $row['mix_name'] . '</h3>';
                     //prepare the table
-                    echo '<table border="1">
+                    echo '<table class="zebra" border="1">
                     <tr>
-                    <th>Mix</th>
+                    <th>Description</th>
                     <th>Created at</th>
                     </tr>';
                     
@@ -76,7 +77,7 @@
                         echo date('d-m-Y', strtotime($row['mix_date']));
                         echo '</td>';
                         echo '</tr>';
-                        $ingredients = array("water"=>$row['water'],"milk"=>$row['milk'],"suggar"=>$row['suggar'],"bubble"=>$row['bubble']);
+                        $ingredients = array("water"=>$row['water'],"milk"=>$row['milk'],"sugar"=>$row['sugar'],"bubble"=>$row['bubble']);
                     }
                     echo '</table>';
                     echo '<div id="canvas_container"></div>';
@@ -125,7 +126,7 @@ function drawMyBottle(ingred, paper, brect, cellheight, cellwidth) {
             for(var y = 0; y < num_lines; y++) {
                 solid_center_left = solid_left_pos + radius;
                 for(var x = 0; x < num_per_line; x++) {
-                    paper.circle(solid_center_left, solid_center_top, radius);
+                    paper.circle(solid_center_left, solid_center_top, radius).attr({fill: color, stroke: 'none'});
                     solid_center_left += 2 * radius;
                 }
                 solid_center_top -= 2 * radius;
@@ -150,3 +151,9 @@ window.onload = function() {
     drawMyBottle(ingred, paper, brect, cellheight, cellwidth);
 }
 </script>
+
+<style>
+h3{
+    font-family: 'Coming Soon', cursive;
+}
+</style>

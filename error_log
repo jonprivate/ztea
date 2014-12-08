@@ -115,6 +115,7 @@
 [25-Nov-2014 19:42:37 America/Denver] PHP Notice:  Undefined index: user_level in /home2/jiongliu/public_html/ztea/header.php on line 15
 [25-Nov-2014 19:42:54 America/Denver] PHP Notice:  Undefined index: user_level in /home2/jiongliu/public_html/ztea/header.php on line 15
 [25-Nov-2014 19:42:56 America/Denver] PHP Notice:  Undefined index: user_level in /home2/jiongliu/public_html/ztea/header.php on line 15
+<<<<<<< HEAD
 [01-Dec-2014 11:58:56 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
 [01-Dec-2014 11:59:01 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
 [01-Dec-2014 11:59:05 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
@@ -199,3 +200,29 @@
 [04-Dec-2014 18:27:26 America/Denver] PHP Notice:  Undefined index: user_level in /home2/jiongliu/public_html/ztea/header.php on line 15
 [04-Dec-2014 18:27:26 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
 [04-Dec-2014 18:27:26 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 79
+=======
+>>>>>>> e5d3b1568075e82b74d51a118b42989c6b229af5
+[05-Dec-2014 21:25:56 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[05-Dec-2014 21:25:56 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[05-Dec-2014 21:26:00 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[05-Dec-2014 21:26:00 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[05-Dec-2014 21:26:03 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[05-Dec-2014 21:26:03 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[05-Dec-2014 21:26:04 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[05-Dec-2014 21:26:04 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[05-Dec-2014 21:26:07 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[05-Dec-2014 21:26:07 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[07-Dec-2014 21:42:36 America/Denver] PHP Notice:  Undefined variable: ingredients in /home2/jiongliu/public_html/ztea/create_mix.php on line 183
+[07-Dec-2014 21:42:46 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[07-Dec-2014 21:42:46 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[07-Dec-2014 21:43:08 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[07-Dec-2014 21:43:08 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[07-Dec-2014 21:43:11 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[07-Dec-2014 21:43:11 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[07-Dec-2014 22:28:21 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[07-Dec-2014 22:28:21 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[07-Dec-2014 22:32:56 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[07-Dec-2014 22:32:56 America/Denver] PHP Notice:  Undefined index: suggar in /home2/jiongliu/public_html/ztea/mixes.php on line 80
+[07-Dec-2014 22:34:35 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[07-Dec-2014 22:34:39 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
+[07-Dec-2014 22:34:41 America/Denver] PHP Notice:  Undefined index: topic_subject in /home2/jiongliu/public_html/ztea/mixes.php on line 24
